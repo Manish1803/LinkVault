@@ -4,7 +4,6 @@ import {
 	RiLineChartLine,
 	RiShieldCheckLine,
 } from "react-icons/ri";
-
 import styles from "./Features.module.css";
 
 const features = [
