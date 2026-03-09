@@ -11,7 +11,7 @@ export const register = async (userData) => {
     const response = await axios.post(`${BASE_URL}/auth/register`, userData);
     return response.data;
   } catch (error) {
-    throw new Error(error.response.data.message);
+    throw new Error(error.response?.data?.message || error.message || "An error occurred");
   }
 };
 
@@ -20,7 +20,7 @@ export const login = async (credentials) => {
     const response = await axios.post(`${BASE_URL}/auth/login`, credentials);
     return response.data;
   } catch (error) {
-    throw new Error(error.response.data.message);
+    throw new Error(error.response?.data?.message || error.message || "An error occurred");
   }
 };
 
@@ -37,7 +37,7 @@ export const logout = async () => {
     );
     return response.data;
   } catch (error) {
-    throw new Error(error.response.data.message);
+    throw new Error(error.response?.data?.message || error.message || "An error occurred");
   }
 };
 
@@ -50,7 +50,7 @@ export const getProfile = async () => {
     });
     return response.data;
   } catch (error) {
-    throw new Error(error.response.data.message);
+    throw new Error(error.response?.data?.message || error.message || "An error occurred");
   }
 };
 
@@ -63,7 +63,7 @@ export const updateProfile = async (userData) => {
     });
     return response.data;
   } catch (error) {
-    throw new Error(error.response.data.message);
+    throw new Error(error.response?.data?.message || error.message || "An error occurred");
   }
 };
 
@@ -76,6 +76,6 @@ export const deleteAccount = async () => {
     });
     return response.data;
   } catch (error) {
-    throw new Error(error.response.data.message);
+    throw new Error(error.response?.data?.message || error.message || "An error occurred");
   }
 };

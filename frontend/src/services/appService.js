@@ -15,7 +15,7 @@ export const fetchDashboardData = async () => {
     });
     return response.data;
   } catch (error) {
-    throw new Error(error.response.data.message);
+    throw new Error(error.response?.data?.message || error.message || "An error occurred");
   }
 };
 
@@ -29,7 +29,7 @@ export const fetchAllLinks = async (page, limit) => {
     });
     return response.data;
   } catch (error) {
-    throw new Error(error.response.data.message || "Failed to fetch links");
+    throw new Error(error.response?.data?.message || "Failed to fetch links");
   }
 };
 
@@ -43,7 +43,7 @@ export const fetchAnalytics = async (page, limit) => {
     });
     return response.data;
   } catch (error) {
-    throw new Error(error.response.data.message);
+    throw new Error(error.response?.data?.message || error.message || "An error occurred");
   }
 };
 
@@ -57,7 +57,7 @@ export const createLink = async (linkData) => {
     });
     return response.data;
   } catch (error) {
-    throw new Error(error.response.data.message);
+    throw new Error(error.response?.data?.message || error.message || "An error occurred");
   }
 };
 
@@ -70,7 +70,7 @@ export const getLink = async (id) => {
     });
     return response.data;
   } catch (error) {
-    throw new Error(error.response.data.message);
+    throw new Error(error.response?.data?.message || error.message || "An error occurred");
   }
 };
 
@@ -83,7 +83,7 @@ export const updateLink = async (id, linkData) => {
     });
     return response.data;
   } catch (error) {
-    throw new Error(error.response.data.message);
+    throw new Error(error.response?.data?.message || error.message || "An error occurred");
   }
 };
 
@@ -96,6 +96,6 @@ export const deleteLink = async (id) => {
     });
     return response.data;
   } catch (error) {
-    throw new Error(error.response.data.message);
+    throw new Error(error.response?.data?.message || error.message || "An error occurred");
   }
 };
