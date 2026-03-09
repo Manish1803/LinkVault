@@ -16,33 +16,33 @@ import Settings from "./pages/Settings";
 import PageNotFound from "./pages/PageNotFound";
 
 function App() {
-  return (
-    <>
-      <BrowserRouter>
-        <AuthProvider>
-          <AppProvider>
-            <ToastContainer
-              position="bottom-left"
-              autoClose={1000}
-              hideProgressBar={true}
-              rtl={false}
-            />
-            <Routes>
-              <Route path="/" element={<Auth />} />
-              <Route path="/app" element={<AppLayout />}>
-                <Route index element={<Navigate replace to="dashboard" />} />
-                <Route path="dashboard" element={<Dashboard />} />
-                <Route path="links" element={<Links />} />
-                <Route path="analytics" element={<Analytics />} />
-                <Route path="settings" element={<Settings />} />
-              </Route>
-              <Route path="*" element={<PageNotFound />} />
-            </Routes>
-          </AppProvider>
-        </AuthProvider>
-      </BrowserRouter>
-    </>
-  );
+	return (
+		<>
+			<BrowserRouter>
+				<AuthProvider>
+					<AppProvider>
+						<ToastContainer
+							position="bottom-left"
+							autoClose={1000}
+							hideProgressBar={true}
+							rtl={false}
+						/>
+						<Routes>
+							<Route path="/" element={<Auth />} />
+							<Route path="/app" element={<AppLayout />}>
+								<Route index element={<Navigate replace to="dashboard" />} />
+								<Route path="dashboard" element={<Dashboard />} />
+								<Route path="links" element={<Links />} />
+								<Route path="analytics" element={<Analytics />} />
+								<Route path="settings" element={<Settings />} />
+							</Route>
+							<Route path="*" element={<PageNotFound />} />
+						</Routes>
+					</AppProvider>
+				</AuthProvider>
+			</BrowserRouter>
+		</>
+	);
 }
 
 export default App;
