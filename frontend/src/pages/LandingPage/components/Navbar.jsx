@@ -14,8 +14,8 @@ const Navbar = () => {
 			</div>
 			<div className={styles.navlinks}>
 				<a href="#features">Features</a>
-				<a href="#">Login</a>
-				<a href="#" className={styles.btnSign}>
+				<a href="/auth">Login</a>
+				<a href="/auth" className={styles.btnSign}>
 					Sign Up
 				</a>
 			</div>

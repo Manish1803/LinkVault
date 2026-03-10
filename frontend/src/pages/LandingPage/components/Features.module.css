@@ -2,8 +2,8 @@
 	padding: 120px 8%;
 	position: relative;
 	z-index: 1;
-	background-color: #0d0e1a;
-	border-bottom: 1px solid #141623;
+	background-color: var(--color-bg-main);
+	border-bottom: 1px solid #242424;
 }
 
 .container {
@@ -15,7 +15,7 @@
 .card {
 	display: flex;
 	flex-direction: column;
-	gap: 22px;
+	gap: 2.2rem;
 	transition: transform 0.4s ease;
 }
 
@@ -58,15 +58,15 @@
 }
 
 .title {
-	font-size: 26px;
-	font-weight: 600;
-	color: #f1f5f9;
+	font-size: 2rem;
+	font-weight: 500;
+	color: var(--color-text-primary);
 	letter-spacing: -0.5px;
 }
 
 .description {
-	font-size: 17px;
+	font-size: 1.4rem;
 	line-height: 1.7;
-	color: #94a3b8;
+	color: var(--color-text-muted);
 	max-width: 420px;
 }

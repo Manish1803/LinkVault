@@ -1,0 +1,48 @@
+:root {
+  /* =========================
+     Brand Colors
+  ========================= */
+  --color-primary: #6937d7;
+  --color-primary-hover: #7146d5;
+
+  --color-accent-orange: #f58f10;
+  --color-accent-purple: #ac37ab;
+  --color-accent-blue: #3b82f6;
+
+  /* =========================
+     Text Colors
+  ========================= */
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #94a3b8;
+  --color-text-muted: #64718e;
+
+  /* =====================
+     Background Colors
+  ===================== */
+  --color-bg-main: #0d0e1a;
+  --color-bg-surface: #eff6ff;
+  --color-bg-tag: #190c29;
+
+   /* =====================
+     Border Colors
+  ===================== */
+  --color-border: #f6f6f6;
+  --color-input-border: #b3b3b3;
+
+  /* =====================
+     Status Colors
+  ===================== */
+  --color-active: #1eb036;
+  --color-inactive: #b0901e;
+
+  /* =====================
+     Shadows
+  ===================== */
+  --shadow: 0px 2px 4px rgba(0,0,0,0.1);
+
+  /* =====================
+     Animations
+  ===================== */
+  --transition: all 0.3s ease-in-out;
+}
+
