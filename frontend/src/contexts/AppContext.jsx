@@ -14,7 +14,7 @@ import {
 import { formatDate } from "../utils/dateUtils";
 import useMobile from "./../hooks/useMobile";
 
-const AppContext = createContext();
+const AppContext = createContext()
 
 const AppProvider = ({ children }) => {
 	const isMobile = useMobile();
@@ -138,4 +138,4 @@ const useApp = () => {
 	return context;
 };
 
-export { AppProvider, useApp };
+export { AppProvider, useApp }

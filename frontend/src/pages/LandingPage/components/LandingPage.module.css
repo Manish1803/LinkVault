@@ -1,0 +1,218 @@
+:global(body) {
+	background: radial-gradient(circle at top, #0f0f1a, #000);
+	color: var(--color-text-primary);
+}
+
+/* =========================
+     Utilities
+  ========================= */
+
+.glassPanel {
+	/* Deep Tinted Glassmorphism */
+	background: rgba(15, 15, 26, 0.4);
+	backdrop-filter: blur(20px) saturate(200%);
+	-webkit-backdrop-filter: blur(20px) saturate(200%);
+
+	/* Sleek pill shape */
+	border-radius: 100px;
+	
+	/* Premium illuminated border */
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	border-top: 1px solid rgba(255, 255, 255, 0.2);
+
+	/* Subtle glow floating effect */
+	box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.15);
+}
+
+/* =========================
+     Navbar
+  ========================= */
+
+.navbar {
+	composes: glassPanel;
+	position: fixed;
+	top: 1.5rem;
+
+	width: 85%;
+	margin: 0 auto;
+	left: 0;
+	right: 0;
+
+	padding: 1rem 3rem;
+
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	z-index: 10;
+}
+
+.logo img {
+	height: 2.4rem;
+	width: auto;
+}
+
+.navlinks {
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	gap: 4rem;
+	font-size: 1.4rem;
+}
+
+.navlinks a {
+	text-decoration: none;
+	color: var(--color-text-primary);
+	transition: 0.3s;
+	letter-spacing: -0.01em;
+}
+
+.navlinks a:first-child {
+	opacity: 0.6;
+}
+
+.navlinks a:hover {
+	opacity: 1;
+}
+
+.navlinks a:nth-last-of-type(2) {
+	opacity: 1;
+}
+
+.btnSign {
+	background-color: var(--color-text-primary);
+	color: #000 !important;
+	padding: 0.5rem 1.4rem;
+	border-radius: 2rem;
+}
+
+.btnSign:hover {
+	background-color: var(--color-primary-hover);
+	color: var(--color-text-primary) !important;
+}
+
+/* =========================
+		 Hero
+  ========================= */
+
+.hero {
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+.headline {
+	font-size: clamp(4rem, 6vw, 6rem);
+	font-weight: 900;
+	color: var(--color-text-primary);
+	margin: 1rem 0;
+}
+
+.headline span {
+	background: linear-gradient(90deg, var(--color-accent-orange), var(--color-accent-purple), var(--color-primary));
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.subtext {
+	width: 30vw;
+	font-size: 1.4rem;
+	letter-spacing: 0.6px;
+	margin-bottom: 2.4rem;
+}
+
+/* InputUrl */
+.inputUrl {
+	composes: glassPanel;
+	padding: 0.6rem 0.6rem 0.6rem 2rem;
+	display: flex;
+	align-items: center;
+	gap: 2rem;
+}
+
+.inputUrl input {
+	font-size: 1.4rem;
+	background-color: transparent;
+	border: none;
+	outline: none;
+	color: var(--color-text-primary);
+	width: 24vw;
+}
+
+/* =========================
+		 CTA - Magnetic Button
+  ========================= */
+.cta {
+	display: flex;
+	align-items: center;
+	gap: 0.8rem;
+	padding: 1.2rem 2.4rem;
+	border-radius: 100px;
+	border: 1px solid rgba(255, 255, 255, 0.4);
+	font-size: 1.4rem;
+	cursor: pointer;
+	
+	/* High-end minimalist glass */
+	background: rgba(255, 255, 255, 0.05);
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
+	
+	color: var(--color-text-primary);
+	transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.cta:hover {
+	/* Inverted contrast on hover */
+	background: var(--color-text-primary);
+	color: #000;
+	border-color: transparent;
+	/* Soft, expansive glow */
+	box-shadow: 0 0 40px rgba(255, 255, 255, 0.2);
+	transform: translateY(-2px);
+}
+
+.cta:active {
+	/* Physical press */
+	transform: translateY(1px);
+	box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+/* Arrow animation */
+.cta svg {
+	transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.cta:hover svg {
+	transform: rotate(-45deg) scale(1.1);
+}
+
+/* Terms */
+.terms {
+	margin-top: 1rem;
+	color: var(--color-text-muted);
+	font-size: 1.2rem;
+}
+
+.terms span {
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+/* =========================
+		 Footer
+  ========================= */
+.footer {
+	background-color: var(--color-bg-main);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 2rem 4rem;
+}
+
+.footer img {
+	height: fit-content;
+	width: 12rem;
+}

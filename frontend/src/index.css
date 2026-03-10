@@ -1,111 +1,102 @@
+@import url("./styles/tokens.css");
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
 
-/* Root variables */
-:root {
-  --color-primary: #1b48da;
-  --color-red: #eb0d0d;
-  --color-text: #3b3c51;
-  --color-input: #b3b3b3;
-  --color-light-text: #a0a0a0;
-  --color-border: #f6f6f6;
-  --color-bg: #eff6ff;
 
-  --color-active: #1eb036;
-  --color-inactive: #b0901e;
-
-  --transition: all 0.3s ease-in-out;
-  --shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-}
-
+/* Reset */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
+/* Base */
 html,
 body {
-  height: 100%;
-  width: 100%;
-  font-family: "Manrope", sans-serif;
-  background-color: #fff;
-  color: var(--color-text);
+	height: 100%;
+	width: 100%;
+	font-family: "Manrope", sans-serif;
+	background-color: var(--color-bg-main);
+	color: var(--color-text-primary);
+	scroll-behavior: smooth;
 }
 
 html {
-  font-size: 62.5%;
+	font-size: 62.5%;
 }
 
 body {
-  font-size: 1.4rem;
-  font-weight: 400;
+	font-size: 1.4rem;
+	font-weight: 400;
 }
 
 ul {
-  list-style: none;
+	list-style: none;
 }
 
 input,
 textarea,
 button {
-  font-family: inherit;
+	font-family: inherit;
 }
 
+/* Focus */
 input:focus,
 button:focus,
 textarea:focus {
-  outline: 1px solid var(--color-primary);
-  transition: var(--transition);
+	outline: 1px solid var(--color-primary);
+	transition: var(--transition);
 }
 
+/* Button */
 button {
-  font-family: inherit;
-  border: none;
-  cursor: pointer;
-  transition: var(--transition);
+	font-family: inherit;
+	border: none;
+	cursor: pointer;
+	transition: var(--transition);
 }
 
 button:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
+	opacity: 0.5;
+	cursor: not-allowed;
 }
 
+/* Update */
 .update {
-  position: absolute;
-  bottom: 1rem;
-  left: 1rem;
-  width: 20rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  font-size: 1rem;
-  padding: 2rem 1rem;
-  border: 1px solid var(--color-border);
-  border-radius: 0.5rem;
-  background-color: #fff;
-  box-shadow: var(--shadow);
+	position: absolute;
+	bottom: 1rem;
+	left: 1rem;
+	width: 20rem;
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	font-size: 1rem;
+	padding: 2rem 1rem;
+	border: 1px solid var(--color-border);
+	border-radius: 0.5rem;
+	background-color: #fff;
+	box-shadow: var(--shadow);
 }
 
 /* Toastify */
 .Toastify__toast--success .Toastify__toast-icon svg {
-  fill: var(--color-primary);
+	fill: var(--color-primary);
 }
 
 /* Media Queries */
 @media (max-width: 55em) {
-  html {
-    font-size: 56.25%;
-  }
+	html {
+		font-size: 56.25%;
+	}
 
-  .Toastify__toast-container {
-    width: 60% !important;
-    bottom: 1.5rem !important;
-    left: 1rem !important;
-  }
+	.Toastify__toast-container {
+		width: 60% !important;
+		bottom: 1.5rem !important;
+		left: 1rem !important;
+	}
 }
 
 @media (max-width: 30em) {
-  html {
-    font-size: 50%;
-  }
+	html {
+		font-size: 50%;
+	}
 }

@@ -7,6 +7,7 @@ import { AuthProvider } from "./contexts/AuthContext";
 import { AppProvider } from "./contexts/AppContext";
 
 // Pages
+import LandingPage from "./pages/LandingPage";
 import Auth from "./pages/Auth";
 import AppLayout from "./pages/AppLayout";
 import Dashboard from "./pages/Dashboard";
