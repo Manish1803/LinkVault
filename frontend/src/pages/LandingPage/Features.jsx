@@ -29,15 +29,15 @@ const features = [
 
 export default function Features() {
 	return (
-		<section className={styles.section}>
+		<section className={styles.section} id="features">
 			<div className={styles.container}>
-				{features.map((feature, i) => (
+				{features.map((feature) => (
 					<motion.div
-						key={i}
+						key={feature.title}
 						className={styles.card}
 						initial={{ opacity: 0, y: 40 }}
 						whileInView={{ opacity: 1, y: 0 }}
-						transition={{ duration: 0.6, delay: i * 0.15 }}
+						transition={{ duration: 0.6, delay: features.indexOf(feature) * 0.15 }}
 						viewport={{ once: true }}
 					>
 						<div className={styles.iconWrapper}>{feature.icon}</div>

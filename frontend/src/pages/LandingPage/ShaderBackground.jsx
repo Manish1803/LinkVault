@@ -115,12 +115,14 @@ export default function ShaderBackground() {
 
 		const clock = new THREE.Clock();
 
+		let animationFrameId;
+
 		const animate = () => {
 			const elapsedTime = clock.getElapsedTime();
 			material.uniforms.uTime.value = elapsedTime;
 
 			renderer.render(scene, camera);
-			requestAnimationFrame(animate);
+			animationFrameId = requestAnimationFrame(animate);
 		};
 
 		animate();
@@ -151,8 +153,12 @@ export default function ShaderBackground() {
 		window.addEventListener("resize", handleResize);
 
 		return () => {
+			cancelAnimationFrame(animationFrameId);
 			window.removeEventListener("mousemove", handleMouseMove);
 			window.removeEventListener("resize", handleResize);
+			geometry.dispose();
+			material.dispose();
+			renderer.dispose();
 			if (mountRef.current && renderer.domElement) {
 				mountRef.current.removeChild(renderer.domElement);
 			}
