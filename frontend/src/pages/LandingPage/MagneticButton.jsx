@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import styles from "./LandingPage.module.css";
 
-export default function MagneticButton({ children }) {
+export default function MagneticButton({ children, onClick }) {
 	const ref = useRef(null);
 
 	const handleMouseMove = (e) => {
@@ -22,6 +22,7 @@ export default function MagneticButton({ children }) {
 			className={styles.cta}
 			onMouseMove={handleMouseMove}
 			onMouseLeave={reset}
+			onClick={onClick}
 		>
 			{children}
 		</button>

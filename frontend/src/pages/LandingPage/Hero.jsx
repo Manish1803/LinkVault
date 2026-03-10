@@ -1,3 +1,5 @@
+import { useState } from "react";
+import { useNavigate } from "react-router";
 import { motion } from "framer-motion";
 import MagneticButton from "./MagneticButton";
 import styles from "./LandingPage.module.css";
@@ -5,6 +7,16 @@ import Tag from "./Tag";
 import { BiLink, BiRightArrowAlt } from "react-icons/bi";
 
 export default function Hero() {
+	const [urlText, setUrlText] = useState("");
+	const navigate = useNavigate();
+
+	const handleShorten = () => {
+		if (urlText.trim()) {
+			localStorage.setItem("pendingUrl", urlText.trim());
+		}
+		navigate("/auth");
+	};
+
 	return (
 		<section className={styles.hero}>
 			<motion.p
@@ -40,8 +52,13 @@ export default function Hero() {
 				transition={{ delay: 0.8 }}
 			>
 				<BiLink size="2rem" />
-				<input type="text" placeholder="Paste your long URL here..." />
-				<MagneticButton>
+				<input
+					type="text"
+					placeholder="Paste your long URL here..."
+					value={urlText}
+					onChange={(e) => setUrlText(e.target.value)}
+				/>
+				<MagneticButton onClick={handleShorten}>
 					Shorten <BiRightArrowAlt size="2rem" />
 				</MagneticButton>
 			</motion.div>

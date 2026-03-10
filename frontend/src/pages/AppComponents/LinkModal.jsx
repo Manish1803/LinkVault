@@ -5,15 +5,21 @@ import { useApp } from "./../../contexts/AppContext";
 import ToggleButton from "./ToggleButton";
 import styles from "./LinkModal.module.css";
 
-function LinkModal({ action = "create", linkData, onSubmit, onClose }) {
+function LinkModal({ action = "create", linkData, onSubmit, onClose, initialUrl = "" }) {
   const { refetch } = useApp();
 
   const [isChecked, setIsChecked] = useState(false);
-  const [url, setUrl] = useState("");
+  const [url, setUrl] = useState(initialUrl);
   const [remarks, setRemarks] = useState("");
   const [expiredDate, setExpiredDate] = useState("");
   const [errors, setErrors] = useState({});
   const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    if (initialUrl && action === "create") {
+      setUrl(initialUrl);
+    }
+  }, [initialUrl, action]);
 
   useEffect(() => {
     if (linkData) {

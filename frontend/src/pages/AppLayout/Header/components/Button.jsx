@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { GoPlus } from "react-icons/go";
 import { useApp } from "./../../../../contexts/AppContext";
 
@@ -8,6 +8,21 @@ import LinkModal from "../../../AppComponents/LinkModal";
 function Button() {
   const { createNewLink } = useApp();
   const [isOpen, setIsOpen] = useState(false);
+  const [initialUrl, setInitialUrl] = useState("");
+
+  useEffect(() => {
+    const pendingUrl = localStorage.getItem("pendingUrl");
+    if (pendingUrl) {
+      setInitialUrl(pendingUrl);
+      setIsOpen(true);
+      localStorage.removeItem("pendingUrl");
+    }
+  }, []);
+
+  const handleClose = () => {
+    setIsOpen(false);
+    setInitialUrl("");
+  };
 
   return (
     <>
@@ -29,9 +44,10 @@ function Button() {
       {isOpen && (
         <Overlay>
           <LinkModal
-            onClose={() => setIsOpen(false)}
+            onClose={handleClose}
             onSubmit={createNewLink}
             action="create"
+            initialUrl={initialUrl}
           />
         </Overlay>
       )}
