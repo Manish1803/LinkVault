@@ -29,7 +29,8 @@ function App() {
 							rtl={false}
 						/>
 						<Routes>
-							<Route path="/" element={<Auth />} />
+							<Route path="/" element={<LandingPage />} />
+							<Route path="/auth" element={<Auth />} />
 							<Route path="/app" element={<AppLayout />}>
 								<Route index element={<Navigate replace to="dashboard" />} />
 								<Route path="dashboard" element={<Dashboard />} />
