@@ -12,8 +12,7 @@ function Auth() {
 
   return (
     <main className={styles.main}>
-      <img src="./logo.png" alt="Cuvette logo" className={styles.logo} />
-      <img src="/sky.png" alt="Login Form Image" className={styles.sideImage} />
+      <img src="./logo.png" alt="Nexora logo" className={styles.logo} />
       <section className={styles.section}>
         <header className={styles.header}>
           <button
@@ -32,7 +31,10 @@ function Auth() {
         <article className={styles.container}>
           <div className={styles.formContainer}>
             <p className={styles.formTitle}>
-              {isLogin ? "Login" : "Join us Today!"}
+              {isLogin ? "Welcome Back" : "Ready to Join?"}
+            </p>
+            <p className={styles.subtitle}>
+              {isLogin ? "Sign in to continue." : "Sign up and start sharing links."}
             </p>
 
             {isLogin ? <Login /> : <SignUp />}
