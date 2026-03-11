@@ -3,6 +3,7 @@ import styles from "./Form.module.css";
 import { useAuth } from "../../../contexts/AuthContext";
 import { useState } from "react";
 import { toast } from "react-toastify";
+import { BiEnvelope, BiLockAlt } from "react-icons/bi";
 
 function Login() {
   const navigate = useNavigate();
@@ -55,25 +56,33 @@ function Login() {
 
   return (
     <form className={`${styles.form} ${styles.login}`} onSubmit={handleSubmit}>
-      <div className={styles.inputContainer}>
-        <input
-          type="text"
-          placeholder="Email Id"
-          name="email"
-          value={formData.email}
-          onChange={handleChange}
-        />
+      <div className={styles.inputGroup}>
+        <label className={styles.inputLabel}>Email</label>
+        <div className={styles.inputWrapper}>
+          <BiEnvelope className={styles.inputIcon} size="2.2rem" />
+          <input
+            type="email"
+            placeholder="Enter your email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+          />
+        </div>
         <span className={styles.error}>{errors.email}</span>
       </div>
 
-      <div className={styles.inputContainer}>
-        <input
-          type="text"
-          placeholder="Password"
-          name="password"
-          value={formData.password}
-          onChange={handleChange}
-        />
+      <div className={styles.inputGroup}>
+        <label className={styles.inputLabel}>Password</label>
+        <div className={styles.inputWrapper}>
+          <BiLockAlt className={styles.inputIcon} size="2.2rem" />
+          <input
+            type="password"
+            placeholder="Enter your password"
+            name="password"
+            value={formData.password}
+            onChange={handleChange}
+          />
+        </div>
         <span className={styles.error}>{errors.password}</span>
       </div>
 
