@@ -1,6 +1,6 @@
 .section {
   padding: 2rem;
-  background-color: #f1f1f1;
+  background-color: transparent;
   height: 100%;
   display: grid;
   grid-template-rows: 1fr auto;

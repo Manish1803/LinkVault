@@ -1,16 +1,21 @@
 .modal {
-  background-color: #fff;
-  border-radius: 0.5rem;
+  background: rgba(18, 18, 28, 0.9);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid var(--color-border);
+  border-radius: 1.6rem;
   width: 50rem;
   max-width: 100%;
   overflow: hidden;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
 }
 
 .header {
   font-size: 1.6rem;
-  background-color: #3b3c51;
-  color: #fff;
-  padding: 0.5rem 2rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid var(--color-border);
+  color: var(--color-text-primary);
+  padding: 1.5rem 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -41,13 +46,22 @@
 .inputContainer input,
 .inputContainer textarea {
   width: 100%;
-  padding: 0.5rem;
-  background-color: transparent;
-  border: 1px solid var(--color-text);
-  color: var(--color-text);
-  border-radius: 0.5rem;
+  padding: 1rem 1.2rem;
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--color-input-border);
+  color: var(--color-text-primary);
+  border-radius: 0.6rem;
   font-weight: 500;
   font-size: 1.4rem;
+  transition: all 0.2s ease;
+}
+
+.inputContainer input:focus,
+.inputContainer textarea:focus {
+  border-color: var(--color-primary);
+  background-color: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 0 3px rgba(105, 55, 215, 0.2);
+  outline: none;
 }
 
 .required {
@@ -64,16 +78,44 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #ebebee;
-  margin-top: 5rem;
+  background-color: rgba(255, 255, 255, 0.02);
+  border-top: 1px solid var(--color-border);
+  margin-top: 4rem;
   padding: 1.5rem 2rem;
 }
 
 .create {
   background-color: var(--color-primary);
   color: #fff;
-  padding: 1rem;
-  border-radius: 0.5rem;
+  padding: 1rem 2rem;
+  border-radius: 0.6rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.create:hover:not(:disabled) {
+  background-color: var(--color-primary-hover);
+  box-shadow: 0 4px 15px rgba(105, 55, 215, 0.4);
+}
+
+.create:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.clear {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-primary);
+  padding: 1rem 2rem;
+  border-radius: 0.6rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.clear:hover {
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .error {

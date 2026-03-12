@@ -15,12 +15,21 @@
 }
 
 .input {
-  padding: 0.5rem;
-  border: 1px solid var(--color-border);
-  border-radius: 0.5rem;
-  font-size: 1.4rem;
-  color: var(--color-text);
-  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+  padding: 1rem 1.2rem;
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--color-input-border);
+  color: var(--color-text-primary);
+  border-radius: 0.6rem;
+  font-weight: 500;
+  font-size: 1.2rem;
+  transition: all 0.2s ease;
+}
+
+.input:focus {
+  border-color: var(--color-primary);
+  background-color: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 0 3px rgba(105, 55, 215, 0.2);
+  outline: none;
 }
 
 .empty {
@@ -43,4 +52,5 @@
 
 .delete {
   background-color: var(--color-red);
+  cursor: pointer;
 }

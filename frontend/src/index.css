@@ -72,9 +72,11 @@ button:disabled {
 	font-size: 1rem;
 	padding: 2rem 1rem;
 	border: 1px solid var(--color-border);
-	border-radius: 0.5rem;
-	background-color: #fff;
-	box-shadow: var(--shadow);
+	border-radius: 0.6rem;
+	background: rgba(18, 18, 28, 0.7);
+	backdrop-filter: blur(24px);
+	-webkit-backdrop-filter: blur(24px);
+	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3), inset 0 1px 1px rgba(255, 255, 255, 0.05);
 }
 
 /* Toastify */
