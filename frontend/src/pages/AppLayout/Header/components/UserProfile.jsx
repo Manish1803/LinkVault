@@ -1,6 +1,8 @@
 import { useNavigate } from "react-router";
 import { useAuth } from "./../../../../contexts/AuthContext";
 import { useEffect, useState } from "react";
+import styles from "./UserProfile.module.css";
+
 function UserProfile() {
   const navigate = useNavigate();
   const { user, fetchUser, getInitials, logoutUser } = useAuth();
@@ -20,36 +22,16 @@ function UserProfile() {
   };
 
   return (
-    <div style={{ position: "relative" }}>
+    <div className={styles.container}>
       <div
-        style={{
-          display: "grid",
-          placeItems: "center",
-          width: "4rem",
-          height: "4rem",
-          borderRadius: "50%",
-          backgroundColor: "#fde48a",
-          color: "#923e0e",
-          fontWeight: "500",
-        }}
+        className={styles.profilePic}
         onClick={() => setIsOpen((is) => !is)}
       >
         {getInitials(user?.name)}
       </div>
       {isOpen && (
         <button
-          style={{
-            position: "absolute",
-            bottom: "-5rem",
-            left: "-5rem",
-            color: "#878BA9",
-            padding: "1rem 2rem",
-            zIndex: 10,
-            borderRadius: "0.5rem",
-            backgroundColor: "#fff",
-            fontWeight: "600",
-            boxShadow: "var(--shadow)",
-          }}
+          className={styles.logoutBtn}
           onClick={handleLogout}
         >
           Logout

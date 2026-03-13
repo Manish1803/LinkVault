@@ -2,7 +2,7 @@
   display: grid;
   place-items: center;
   text-align: center;
-  color: #777;
+  color: var(--color-text-muted);
 }
 
 .tableContainer::-webkit-scrollbar {
